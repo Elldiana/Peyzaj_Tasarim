@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Örneği</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            height: 800px; /* Uzun bir alan */
+            border: 2px solid #ddd;
+            margin: 20px auto;
+            width: 80%;
+            overflow: auto; /* Kaydırılabilir alan */
+        }
+
+        .header {
+            position: sticky; /* Sticky pozisyon */
+            top: 0; /* Üstte yapışacağı yer */
+            background-color: #f8d7da;
+            padding: 10px;
+            border: 1px solid #dc3545;
+        }
+
+        .content {
+            height: 1500px; /* İçeriği uzun tutalım */
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sticky Pozisyon Örneği</h1>
+    <p>Aşağıda sticky özelliğini çalışırken görebilirsiniz:</p>
+
+    <div class="container">
+        <div class="header">
+            <strong>Sticky Header:</strong> Kaydırınca üstte sabit kalır, ama konteynerden çıkmaz.
+        </div>
+        <div class="content">
+            <p>İçeriği aşağı kaydırın ve sticky özelliğini görün.</p>
+        </div>
+    </div>
+</body>
+</html>

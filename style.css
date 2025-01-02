@@ -1,0 +1,733 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rancho&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html 
+{
+    scroll-behavior: smooth;
+}
+
+.container
+{
+    display: flex; /*daha esnek ve hizalanabilir hale gelir.*/
+    flex-direction: column;
+    gap:  16px; /*ile, grid içerisindeki öğeler arasına 16px boşluk eklenir.*/
+    margin: 32px 80px; /*.container öğesinin dış kenarlarından (container'ın etrafından) 32px yukarı ve aşağı, 80px ise sola ve sağa boşluk eklenir.*/
+}
+
+/* ---------------NAVBAR---------------- */
+
+.navbar 
+{
+    display: flex;
+    justify-content: space-between; /*Yani, öğeler arasındaki boşluklar eşit olur, fakat ilk öğe ile son öğe kapsayıcının kenarlarına yapışmaz.*/
+    align-items: center;
+    padding: 0 20px;
+}
+  
+.logo 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px; 
+}
+
+.logo img 
+{
+  width: 100%; /* tam olarak uyum sağlamasını istiyorsak*/
+  height: 100%;
+}
+
+  
+.nav-links 
+{
+    display: flex;
+    list-style: none; /*UL İŞARET veya sıralama numaralarını kaldırmak için kullanılır*/
+    margin: 0; /*Tasarımda kesin kontrol sağlar ve beklenmedik durumların önüne geçer.*/
+    padding: 0;   
+}
+  
+.nav-links li 
+{
+    margin: 0 15px; /* Üst ve alt 0, SAĞ VE SOL 15*/
+}
+  
+.nav-links a 
+{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+  
+.nav-links a:hover 
+{
+    color: #72BF78;
+}
+  
+#menu-toggle 
+{
+    display: none;
+}
+
+.hamburger 
+{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ---------- BANNER --------- */
+.ust
+{
+  flex: 1;
+  margin-top: 20px;
+}
+
+.slide 
+{
+width: 100%; 
+height: 600px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.slide img 
+{
+width: 100%;
+height: 100%;
+object-fit: cover; 
+object-position: center; 
+position: relative;
+}
+
+.slideText
+{
+  position: absolute; 
+  top: 150px;
+  left: 96px;
+  text-align: justify;
+  padding: 10px 20px;
+  max-width: 500px; 
+  color: #444;
+  font-size: 20px;
+}
+.slideText h1
+{
+  font-weight: 500;
+  font-size: 26px;
+}
+
+/* ----------ILETİŞİM---------- */
+
+.iletisim 
+{
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.iletisim h2 
+{
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.iletisim p 
+{
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.iletisim label 
+{
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.iletisim input 
+{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.iletisim input:focus 
+{
+  border-color: #007bff;
+  outline: none; /*Dış çerçeve kaldırma*/
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.iletisim button 
+{
+  background-color: #72BF78;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+}
+
+.iletisim button:hover 
+{
+  background-color: #FEFF9F;
+  color: #72BF78;
+}
+
+.galeryBaslik 
+{
+  text-align: center;
+  padding: 30px;
+  margin: 32px 80px;
+}
+
+.galeryBaslik h2 
+{
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.galeryBaslik p 
+{
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify; /*u, yazılı bir metnin her iki kenarının da düzgün bir görünüme sahip olmasını sağlar.*/
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* ---------- CONTINERLERIM --------- */
+
+section
+{
+    flex: 4;   
+    display: flex;
+    gap: 16px;
+}
+.container.iki section
+{
+  flex-direction: row-reverse;
+}
+
+.sol
+{
+    flex: 2;
+    height: 100%;    
+}
+
+.sol img
+{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.sag
+{
+    flex: 2;
+    background-color: rgba(192, 235, 166, 0.3);
+}
+
+.sag.iletisimm
+{
+  padding: 20px;
+}
+
+.sag.iletisimm h2
+{
+  font-weight: 500;
+}
+
+.textSag
+{
+  padding: 20px;
+  color: #444;
+  margin: 0; 
+}
+
+.sag h1
+{
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.sag p
+{
+  font-size: 18px;
+}
+
+/* -----------GALLERY------------ */
+.grid-resim img
+{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; /* DİKEYDEN TAM ORTAYA YERLEŞTİTİT*/
+  display: inline-block; /*Metin akışına göre, YENİ SIRAYA GEÇEREK SIRALANIR*/
+
+}
+
+.grid-resim div
+{
+  display: flex; /*daha esnek ve hizalanabilir hale gelir.*/
+  justify-content: center; /*yATAYDA ORTALAR, TAM ORTADA YER ALIR*/
+  align-items: center; /*dikeyde ortalar, DİKEYDE MERKEZLENİR*/
+}
+
+.grid-resim img
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*belirlenen alanı tamamen kaplaması sağlanır, ancak resmin en/boy oranı korunur*/
+  border-radius: 5px;
+}
+
+.grid-resim
+{
+  display: grid; /*İki boyutlu düzenleme: Satır ve sütunlarla içerikleri yerleştirme.*/
+  grid-gap: 10px; /*SAAT YONUNDE Grid öğeleri arasındaki boşluğu*/
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); /*Bu ifade, grid'in sütun sayısını ve genişliklerini dinamik olarak hesaplar.*/
+  grid-auto-rows: 200px; /* Grid’in otomatik olarak oluşturacağı satırların yüksekliği 200px olarak belirlenir.*/
+  grid-auto-flow: dense;  /*öğelerin grid içindeki boşlukları daha verimli bir şekilde doldurmasını sağlar*/
+} /* DENSE Eğer grid içinde boşluklar varsa (örneğin, büyük bir öğe nedeniyle bir satırda boşluk kalmışsa), dense özelliği daha küçük öğeleri bu boşluklara yerleştirmeye çalışır.*/
+/*auto-fit: Grid'in mümkün olduğunca çok sayıda sütun içermesini sağlar.*/
+/*minmax(250px, 1fr): Sütunların genişliği, en az 250px olabilir ancak daha fazla alan varsa 1fr (yani eşit paylaştırılmış alan) kadar genişler.*/
+/*fr (fraction) Esneklik: Ekran boyutu değişse bile, parçalar orantılı olarak büyüyor veya küçülüyor*/
+
+
+
+.grid-resim .ince
+{
+  grid-column: span 2; /* iki sütunu kapsar. Yani, normalde bir sütunda bulunan bir öğe, bu sınıf ile iki sütunu birleştirerek genişler.*/
+}
+
+.grid-resim .buyuk
+{
+  grid-column: span 2; /*iki sütunu,İKİ SATIR KAPSIYOR*/
+  grid-row: span 2;
+}
+/* Grid düzeninde span kelimesi, öğelerin yatayda (sütunlar) veya dikeyde (satırlar) ne kadar yer kaplayacağını belirtmek için tek bir doğru terimdir*/
+
+/* -----------------KARDLAR---------------- */
+
+.cardBaslik 
+{
+  margin-left: 60px;
+  color: #111827;
+  display: inline-block;
+}
+
+.cardBaslik h1
+{
+  border-bottom: 1px solid #444;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.cardlar 
+{
+  display: flex;
+  align-items: flex-start; /*topta yukarıda olur dikeyden hizalanır*/
+  justify-content: space-around;
+  flex-wrap: wrap; 
+}
+
+.card 
+{
+  max-width: 300px;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  margin: 16px;
+}
+
+.card a 
+{
+  text-decoration: none;
+}
+
+.icerik 
+{
+  padding: 10px;
+  flex-grow: 1; /*Öğe, kullanılabilir tüm ekstra alanı paylaşmaya hazırdır.*/
+}
+/*Kullanılabilir alanı dinamik bir şekilde dağıtmak için flex-grow mükemmel bir çözümdür.*/
+
+.image 
+{
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.image img 
+{
+  width: 100%;
+  height: 100%;
+}
+
+.baslik 
+{
+  color: #111827;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.texti 
+{
+  margin-top: 8px;
+  color: #6B7280;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.action 
+{
+  display: inline-flex;
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  align-items: center;
+  gap: 4px;
+  background-color:#72BF78;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* --------HIZMETLER KARDIM--------- */
+
+.container.hizmetler
+{
+  flex-direction: row-reverse;
+}
+
+.hizmetler
+{
+  flex: 4;   
+  display: flex;
+  gap: 1em;
+}
+
+.solHizmet
+{
+    flex: 1;
+    margin-bottom: 20px;   
+}
+
+.solHizmet img
+{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.sagHizmet
+{
+    flex: 2;
+}
+
+.textSagHizmet
+{
+  padding: 20px;
+  color: #444;
+}
+
+.sagHizmet h2
+{
+  font-size: 30px;
+}
+
+.textSag h2 
+{
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sagHizmet p
+{
+  font-size: 18px;
+}
+
+  /* ------------ FOOTER ---------- */
+
+footer 
+{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 30px 0;
+    margin-top: 20px;
+    background-color: #D3EE98;
+    color: #333;
+    text-align: center;
+  }  
+.footik .takip-linkler a 
+{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #72BF78;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #333;
+}
+  
+.footik .takip-linkler a:hover 
+{
+    background-color: #fff;
+    color: #72BF78;
+}
+  
+.footik .numara 
+{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+  
+.footik .numara p 
+{
+    margin: 0;
+    font-size: 20px;
+}
+  
+.footik .numara a 
+{
+    color: green;
+    text-decoration: none;
+    font-size: 20px;
+}
+.footik .numara a:hover
+{
+    color: #f39c12;
+}
+  
+.footik .nav-linkler ul 
+{
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+.footik .nav-linkler ul li 
+{
+    margin-bottom: 10px;
+}
+  
+.footik .nav-linkler ul li a 
+{
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+}
+.footik .nav-linkler ul li a:hover
+{
+    color: #f39c12;
+}
+
+
+  /* -------------MEDIA SCREEN----------------- */
+
+/* --------1278------- */
+
+@media (max-width: 1278px)
+{
+   .container.iki > section
+   {
+    flex-direction: column;
+   }
+   .container > section
+   {
+    flex-direction: column;
+   }
+  .sol img{
+    height: 500px;
+   }
+  .textSag h1
+  {
+    font-size: 24px;
+  }
+  .textSag h2
+  {
+    font-size: 20px;
+  }
+  .solHizmet
+  {
+    flex: 1.5;     
+  } 
+}
+
+/* --------968------- */
+
+@media (max-width: 968px)
+{
+    .container
+    {
+        margin: 16px 32px;
+    }
+    .logo 
+    {
+      width: 200px;
+      height: 90px; 
+    } 
+    #nav ul li a 
+    {
+      font-size: 16px;
+    }
+    .slide 
+    {
+      height: 450px;
+    }
+    .slideText h1
+    {
+      font-size: 20px;
+    }
+    .slideText
+    {
+      top: 130px;
+      left: 48px;
+      text-align: start;
+      max-width: 400px; 
+      font-size: 16px;
+    }
+    .slideText h1
+    {
+      font-size: 22px;
+    }
+    .cardBaslik h1
+    {
+      font-size: 20px;
+    }
+    .galeryBaslik
+    {
+      margin: 16px 32px;
+    }
+}
+
+/* --------768------- */
+
+@media (max-width: 768px)
+{
+  .nav-links li 
+  {
+    margin: 0 10px;
+  }
+  .nav-links a 
+  {
+    font-size: 16px;
+  }
+  .footik .numara
+  {
+    flex-direction: column;
+  }
+  .sagHizmet .textSag p
+  {
+    font-size: 14px
+  }  
+  .sagHizmet
+  {
+    flex: 1;
+  }
+  .hizmetler
+  {
+    flex-direction: column;
+  }
+  .slideText 
+  {
+    top: 130px;
+    left: 48px;
+    padding: 5px;
+    max-width: 45%; 
+    font-size: 14px;
+    text-align: start;
+  }
+}
+
+/* --------650------- */
+
+@media (max-width: 650px) 
+{
+  .navbar
+  {
+    background-color: rgba(114, 191, 120, 0.5);
+  }
+  .nav-links 
+  {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(114, 191, 120, 0.5);
+    position: absolute;
+    font-weight: 700;
+    top: 90px;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+  }
+  .nav-links a:hover 
+  {
+    color: #333;
+  }
+  .nav-links li 
+  {
+    margin: 10px 0;
+  }
+  
+  #menu-toggle:checked + .hamburger + .nav-links 
+  {
+    display: flex;
+  }
+  
+  .hamburger 
+  {
+    display: block; 
+  }
+  .slideText h1
+  {
+    margin: 0;
+    font-size: 20px;
+  }
+  .cardBaslik 
+  { 
+    margin-left: 28%;
+  } 
+}
+  
